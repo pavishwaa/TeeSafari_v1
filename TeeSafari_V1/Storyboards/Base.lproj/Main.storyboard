@@ -70,6 +70,10 @@
                         <viewLayoutGuide key="safeArea" id="uSn-1b-zgu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="UPass" destination="G7F-2H-3kh" id="ojE-zS-gDk"/>
+                        <outlet property="Uname" destination="Oyt-f3-K2W" id="KgI-td-aAG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6P-PZ-1eF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1kn-Qx-GEu" userLabel="Exit" sceneMemberID="exit"/>
@@ -238,6 +242,12 @@
                         <viewLayoutGuide key="safeArea" id="xMW-Jr-AGm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="6r7-ej-T2I" id="Ro6-JZ-8I3"/>
+                        <outlet property="name" destination="Bcj-Sk-0FQ" id="pd8-co-csB"/>
+                        <outlet property="uPass" destination="WO2-FW-tLG" id="tpo-h8-CVw"/>
+                        <outlet property="uname" destination="M63-uQ-vRF" id="fOz-C8-A7q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UG0-k7-ydl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="YrE-0b-ujQ" userLabel="Exit" sceneMemberID="exit"/>

@@ -9,14 +9,22 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+    class LoginViewController: UIViewController
+    {
+        
+        @IBOutlet weak  var Uname : UITextField!
+        @IBOutlet weak var UPass : UITextField!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        Uname.delegate=self
+        UPass.delegate=self
         // Do any additional setup after loading the view.
     }
     
+        
+        // TODO check whether the crendentials are correct if correct send it to main page if in correct display alert box
 
     /*
     // MARK: - Navigation
@@ -27,5 +35,12 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
+}
+extension LoginViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

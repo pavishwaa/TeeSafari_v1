@@ -3,14 +3,25 @@
 //  TeeSafari_V1
 //
 //  Created by  on 4/18/21.
+// Author Jeel Patel
+// Student ID : 991548626
 //
 
 import UIKit
 
 class AccountViewController: UIViewController {
+    
+    @IBOutlet weak var name : UITextField!
+    @IBOutlet weak var email : UITextField!
+    @IBOutlet weak var uname : UITextField!
+    @IBOutlet weak var uPass : UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        name.delegate=self
+        email.delegate=self
+        uname.delegate=self
+        uPass.delegate=self
 
         // Do any additional setup after loading the view.
     }
@@ -26,4 +37,12 @@ class AccountViewController: UIViewController {
     }
     */
 
+}
+// this is for return key in keyboard
+
+extension AccountViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
