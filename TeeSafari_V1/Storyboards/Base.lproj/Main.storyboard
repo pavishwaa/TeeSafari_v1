@@ -237,6 +237,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPersonWithSender:" destination="qMC-hD-F39" eventType="touchUpInside" id="y5m-VT-brv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xMW-Jr-AGm"/>

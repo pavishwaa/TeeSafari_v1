@@ -31,12 +31,89 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         databasepath = documentsDir.appending("/" + databaseName!)
         
         checkAndCreateDatabase()
+        readDataFromDatabase()
     
         
         GMSServices.provideAPIKey( "AIzaSyAftvv6Ll5T8usyYvIKiYc03yS7rbq3Cms" )
         
         return true
     }
+    
+    
+    func readDataFromDatabase(){
+        
+        people.removeAll()
+        
+        var db : OpaquePointer? = nil
+        
+        if sqlite3_open(self.databasepath, &db) ==  SQLITE_OK {
+            
+            print("Successfully opened connection to database at \(self.databasepath)")
+            
+            
+        }
+        else {
+            print("Unable to open database")
+        }
+        
+        
+    }
+    
+    
+    func insertIntoDatabase(person : Data) -> Bool {
+        var db : OpaquePointer? = nil
+        var returnCode : Bool = true
+        
+        if  sqlite3_open(self.databasepath, &db) == SQLITE_OK {
+            
+            var insertStatement : OpaquePointer? = nil
+            var insertStatementString : String = "insert into entries values(NULL,?,?,?,?)"
+            
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                
+                let nameStr = person.name! as NSString
+                let emailStr = person.email! as NSString
+                let userNameStr = person.username! as NSString
+                let userPassStr = person.upassword! as NSString
+                
+                
+                sqlite3_bind_text(insertStatement, 1, nameStr.utf8String  , -1, nil)
+                sqlite3_bind_text(insertStatement, 2, emailStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 3, userNameStr.utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 4, userPassStr.utf8String, -1, nil)
+                
+                if sqlite3_step(insertStatement) == SQLITE_DONE{
+                    
+                    let rowID = sqlite3_last_insert_rowid(db)
+                    print("Successfully inserted row \(rowID)")
+                }
+                else{
+                    print("could not insert row")
+                    returnCode = false
+                }
+                
+              
+                
+            }
+            else {
+                print("Insert statement could not be prepared")
+                returnCode = false
+            }
+            sqlite3_close(db)
+            
+        }
+        else{
+            print("Unable to open database")
+            returnCode = false
+        }
+        
+        
+        
+        return returnCode
+    }
+    
+    
+    
     
     func checkAndCreateDatabase() {
         var success = false
@@ -51,9 +128,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName!)
         
-       //try?  fileManager.copyItem(atPath : databasePathFromApp, toPath: databasepath)
+        try? fileManager.copyItem(atPath: databasePathFromApp!, toPath:databasepath! )
         
-        
+    
         return
         
         

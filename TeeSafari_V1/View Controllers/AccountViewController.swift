@@ -15,6 +15,23 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var email : UITextField!
     @IBOutlet weak var uname : UITextField!
     @IBOutlet weak var uPass : UITextField!
+    
+    
+    @IBAction func addPerson(sender : Any){
+        let person : Data = Data.init()
+        person.initWithData(theRow: 0, theName: name.text!, theEmail: email.text!, theusername: uname.text!, theupass: uPass.text!)
+        
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let returnCode = mainDelegate.insertIntoDatabase(person: person)
+        
+        var returnMSG  : String = " Person Added"
+        
+        if returnCode == false {
+            returnMSG = "Person add failed"
+            
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
