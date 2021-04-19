@@ -7,20 +7,60 @@
 
 import UIKit
 import GoogleMaps
+import SQLite3
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    var databaseName : String? = "project.db"
+    var databasepath : String?
+    var people : [Data] = []
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // for account and login
+        
+        let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)
+        
+        let documentsDir = documentPaths[0]
+        databasepath = documentsDir.appending("/" + databaseName!)
+        
+        checkAndCreateDatabase()
+    
+        
         GMSServices.provideAPIKey( "AIzaSyAftvv6Ll5T8usyYvIKiYc03yS7rbq3Cms" )
         
         return true
     }
+    
+    func checkAndCreateDatabase() {
+        var success = false
+        let fileManager = FileManager.default
+        
+        success = fileManager.fileExists(atPath: databasepath!)
+        
+        if success {
+            
+            return
+        }
+        
+        let databasePathFromApp = Bundle.main.resourcePath?.appending("/" + databaseName!)
+        
+       //try?  fileManager.copyItem(atPath : databasePathFromApp, toPath: databasepath)
+        
+        
+        return
+        
+        
+        
+        
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 

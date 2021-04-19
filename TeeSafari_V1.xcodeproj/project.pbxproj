@@ -12,6 +12,8 @@
 		A760635B262D24B0009DFE13 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760635A262D24B0009DFE13 /* AccountViewController.swift */; };
 		A760635F262D3DA5009DFE13 /* project.db in Resources */ = {isa = PBXBuildFile; fileRef = A760635E262D3DA5009DFE13 /* project.db */; };
 		A7606362262E0E0B009DFE13 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7606361262E0E0B009DFE13 /* Data.swift */; };
+		A7606366262E1AC8009DFE13 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7606364262E1AB1009DFE13 /* libsqlite3.tbd */; };
+		A7606368262E1AD4009DFE13 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7606365262E1ABC009DFE13 /* libsqlite3.0.tbd */; };
 		F569C9F2261CF79B000198DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F1261CF79B000198DF /* AppDelegate.swift */; };
 		F569C9F4261CF79B000198DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F3261CF79B000198DF /* SceneDelegate.swift */; };
 		F569C9F6261CF79B000198DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F5261CF79B000198DF /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		A760635A262D24B0009DFE13 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A760635E262D3DA5009DFE13 /* project.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = project.db; path = ../../../../Users/pate1798/project.db; sourceTree = "<group>"; };
 		A7606361262E0E0B009DFE13 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A7606364262E1AB1009DFE13 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A7606365262E1ABC009DFE13 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DC59C7D41BC732D71E9AFD8F /* Pods-TeeSafari_V1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeeSafari_V1.debug.xcconfig"; path = "Target Support Files/Pods-TeeSafari_V1/Pods-TeeSafari_V1.debug.xcconfig"; sourceTree = "<group>"; };
 		F569C9EE261CF79B000198DF /* TeeSafari_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeeSafari_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F569C9F1261CF79B000198DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7606366262E1AC8009DFE13 /* libsqlite3.tbd in Frameworks */,
 				76541CB6291071206C83C7A1 /* Pods_TeeSafari_V1.framework in Frameworks */,
+				A7606368262E1AD4009DFE13 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 		4387E2966FB4431A15C85214 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7606365262E1ABC009DFE13 /* libsqlite3.0.tbd */,
+				A7606364262E1AB1009DFE13 /* libsqlite3.tbd */,
 				0B825DB54143D26706D6B298 /* Pods_TeeSafari_V1.framework */,
 			);
 			name = Frameworks;
