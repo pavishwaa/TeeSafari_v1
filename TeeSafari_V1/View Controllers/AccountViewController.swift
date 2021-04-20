@@ -31,8 +31,23 @@ class AccountViewController: UIViewController {
             returnMSG = "Person add failed"
             
         }
-    }
+        
+        
+        let alertController = UIAlertController(title: "register", message: returnMSG, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
 
+    }
+    
+    
+    @IBAction  func alertBox (sender:Any){
+        let alertcont = UIAlertController(title:"Welcome!!", message: "User registered", preferredStyle: .alert)
+        alertcont.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        self.present(alertcont, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         name.delegate=self

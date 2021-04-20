@@ -91,6 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("could not insert row")
                     returnCode = false
                 }
+                sqlite3_finalize(insertStatement)
                 
               
                 
