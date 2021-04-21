@@ -15,6 +15,7 @@
 		A7606375262E4E36009DFE13 /* project.db in Resources */ = {isa = PBXBuildFile; fileRef = A7606374262E4E36009DFE13 /* project.db */; };
 		A7E02FE0262E5182004DCAFC /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E02FDF262E5182004DCAFC /* ProductViewController.swift */; };
 		A7E02FE4262E5231004DCAFC /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E02FE3262E5231004DCAFC /* SiteCell.swift */; };
+		A7E0300C262FC622004DCAFC /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0300B262FC622004DCAFC /* AboutUsViewController.swift */; };
 		F569C9F2261CF79B000198DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F1261CF79B000198DF /* AppDelegate.swift */; };
 		F569C9F4261CF79B000198DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F3261CF79B000198DF /* SceneDelegate.swift */; };
 		F569C9F6261CF79B000198DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569C9F5261CF79B000198DF /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		A7606374262E4E36009DFE13 /* project.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = project.db; path = ../../../project.db; sourceTree = "<group>"; };
 		A7E02FDF262E5182004DCAFC /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		A7E02FE3262E5231004DCAFC /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
+		A7E0300B262FC622004DCAFC /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		E36F9AEB9A08F5D630A4F04C /* Pods-TeeSafari_V1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeeSafari_V1.debug.xcconfig"; path = "Target Support Files/Pods-TeeSafari_V1/Pods-TeeSafari_V1.debug.xcconfig"; sourceTree = "<group>"; };
 		E693D7BDF3606C9813BEE539 /* Pods_TeeSafari_V1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeeSafari_V1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F569C9EE261CF79B000198DF /* TeeSafari_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeeSafari_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				F569CA17261CFCC8000198DF /* MapViewController.swift */,
 				A7606357262D20A4009DFE13 /* LoginViewController.swift */,
 				A760635A262D24B0009DFE13 /* AccountViewController.swift */,
+				A7E0300B262FC622004DCAFC /* AboutUsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E0300C262FC622004DCAFC /* AboutUsViewController.swift in Sources */,
 				A7606362262E0E0B009DFE13 /* Data.swift in Sources */,
 				F569C9F6261CF79B000198DF /* ViewController.swift in Sources */,
 				F569C9F2261CF79B000198DF /* AppDelegate.swift in Sources */,

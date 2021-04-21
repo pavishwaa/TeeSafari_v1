@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Successfully opened connection to database at \(self.databasepath)")
             
             
+            
         }
         else {
             print("Unable to open database")
