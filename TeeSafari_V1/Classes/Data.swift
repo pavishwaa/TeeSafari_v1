@@ -22,5 +22,10 @@ class Data: NSObject {
         username=un
         upassword=up
     }
+    
+    func initWithData1(theusername un:String, theupass up:String){
+        username=un
+        upassword=up
+    }
 
 }

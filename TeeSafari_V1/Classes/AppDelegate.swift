@@ -39,27 +39,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
     func readDataFromDatabase(){
-        
         people.removeAll()
         
         var db : OpaquePointer? = nil
         
-        if sqlite3_open(self.databasepath, &db) ==  SQLITE_OK {
-            
+        if sqlite3_open(self.databasepath, &db) == SQLITE_OK{
             print("Successfully opened connection to database at \(self.databasepath)")
             
-            
-            
+            var queryStatement : OpaquePointer? = nil
+            var queryStatementString : String = "select * from entries"
+            if sqlite3_prepare(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK{
+                while sqlite3_step(queryStatement) == SQLITE_ROW {
+                    let id : Int = Int(sqlite3_column_int(queryStatement, 0))
+                    let cname = sqlite3_column_text(queryStatement, 1)
+                    let cemail = sqlite3_column_text(queryStatement, 2)
+                   let cuname = sqlite3_column_text(queryStatement, 3)
+                    let cupass = sqlite3_column_text(queryStatement, 4)
+                
+                
+                 
+                    let  name = String(cString: cname!)
+                    let email = String(cString: cemail!)
+                    let uname = String(cString: cuname!)
+                    let upass = String(cString: cupass!)
+                
+               
+                    
+                    let data : Data = Data.init()
+                    data.initWithData(theRow: id, theName: name, theEmail: email, theusername: uname,theupass: upass)
+                    
+                    people.append(data)
+                    print("Query result")
+                    print("\(id) \(name) \(email) \(uname) \(upass) ")
+                    
+                    
+                    
+                }
+                
+                sqlite3_finalize(queryStatement)
+            }
+            else{
+                print("Select statement could not be prepared")
+            }
+            sqlite3_close(db)
         }
         else {
             print("Unable to open database")
         }
         
-        
     }
-    
+
     
     func insertIntoDatabase(person : Data) -> Bool {
         var db : OpaquePointer? = nil

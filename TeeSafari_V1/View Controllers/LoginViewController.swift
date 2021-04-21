@@ -14,9 +14,41 @@ import UIKit
         
         @IBOutlet weak  var Uname : UITextField!
         @IBOutlet weak var UPass : UITextField!
+        @IBOutlet var button : UIButton!
+        
+        var x=0;
+        
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        
+          // This method will be used to check if users login crendentials are corrrect or not
+       @IBAction  func loginCheck(_sender: UIButton)
+        {
+            let p = mainDelegate.people.count
+        
+            
+        for x in 0..<(p){
+                if(Uname.text == mainDelegate.people[x].username ){
+                    
+                    if (UPass.text ==  mainDelegate.people[x].upassword){
+                        button.isEnabled=true
+                    }
+                    else{
+                        
+                        
+                    }
+                    
+                }
+                else{
+                    
+                }
+        }
+            
+        }
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.isEnabled=false
         
         Uname.delegate=self
         UPass.delegate=self
